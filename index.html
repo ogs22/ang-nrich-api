@@ -1,14 +1,28 @@
 <!doctype html>
 <html ng-app="project">
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js">
-    </script>
-    <script src="project.js"></script>
-    <script src="nrich.js"></script>
-  </head>
-  <body>
-    <h2>NRICH resources:</h2>
-    <div ng-view></div>
-  </body>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js">
+        </script>
+        <script src="project.js"></script>
+        <script src="nrich.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+            processEscapes: true
+            },
+            "HTML-CSS": {
+            availableFonts: ["TeX"]
+            }
+            });</script>
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <link href="http://nrich.maths.org/css/v6.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <h2>NRICH resources: $999$</h2>
+        <div ng-view></div>
+    </body>
 </html>

@@ -10,11 +10,12 @@ angular.module('project', ['nrich']).
  
 function ListAllCtrl($scope,$location,$routeParams, Projectx) {
   $scope.resources = Projectx.query({resreq:'id'});
-  console.log($scope.resources);
+  
 }
  
 function ListCtrl($scope,$location,$routeParams, Projectx) {
   $scope.info = Projectx.get({id:$routeParams.id,resreq:'resreq'});
+  MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 }
  
  

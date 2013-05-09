@@ -1,6 +1,6 @@
 Title:	An angularjs learn as you go along project using nrich api
 Author:	Owen Smith
-Base Header Level:	2  
+Base Header Level:2  
 
 # Introduction #
 
