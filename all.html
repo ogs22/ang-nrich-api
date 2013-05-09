@@ -8,9 +8,9 @@
   </thead>
   <tbody>
   <tr ng-repeat="id in resources | filter:search | orderBy:'id'">
-    <td><a href="#/{{id.id}}" target="_blank">{{$index}} {{id.id}}</a></td>
+    <td><a href="#/{{id.id}}" target="_blank">{{id.id}}</a></td>
     <td>{{id.name}}</td>
   </tr>
   </tbody>
 </table>
-Loading...
+<div class="loading">Loading...</div>

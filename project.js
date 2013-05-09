@@ -23,10 +23,14 @@ angular.module('project', ['nrich']).
     });
  
 function ListAllCtrl($scope,$location,$routeParams, Projectx) {
-    $scope.resources = Projectx.query({
+    var resources = Projectx.query({
         resreq:'id'
+    },function() {
+        //little hack to make the resource IDs ints so the ordering works
+        for (var i =0;i < resources.length;i++)
+            resources[i].id = resources[i].id*1;
     });
-  
+    $scope.resources = resources;
 }
  
 function ListCtrl($scope,$location,$routeParams, Projectx) {
