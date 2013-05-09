@@ -1,21 +1,41 @@
 angular.module('project', ['nrich']).
-  config(function($routeProvider) {
-    $routeProvider.
-      when('/',{controller:ListAllCtrl,templateUrl:'all.html'}).
-      when('/:id', {controller:ListCtrl, templateUrl:'list.html'}).
-      when('/edit/:projectId', {controller:EditCtrl, templateUrl:'detail.html'}).
-      when('/new', {controller:CreateCtrl, templateUrl:'detail.html'}).
-      otherwise({redirectTo:'/'});
-  });
+    config(function($routeProvider) {
+        $routeProvider.
+        when('/',{
+            controller:ListAllCtrl,
+            templateUrl:'all.html'
+        }).
+        when('/:id', {
+            controller:ListCtrl, 
+            templateUrl:'list.html'
+        }).
+        when('/edit/:projectId', {
+            controller:EditCtrl, 
+            templateUrl:'detail.html'
+        }).
+        when('/new', {
+            controller:CreateCtrl, 
+            templateUrl:'detail.html'
+        }).
+        otherwise({
+            redirectTo:'/'
+        });
+    });
  
 function ListAllCtrl($scope,$location,$routeParams, Projectx) {
-  $scope.resources = Projectx.query({resreq:'id'});
+    $scope.resources = Projectx.query({
+        resreq:'id'
+    });
   
 }
  
 function ListCtrl($scope,$location,$routeParams, Projectx) {
-  $scope.info = Projectx.get({id:$routeParams.id,resreq:'resreq'});
-  MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    $scope.info = Projectx.get({
+        id:$routeParams.id,
+        resreq:'resreq'
+    });
+    var math = document.getElementById("mcm");
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
 }
  
  
@@ -25,7 +45,7 @@ function CreateCtrl($scope, $location, Projectx) {
  
  
 function EditCtrl($scope, $location, $routeParams, Projectx) {
-    //some stuff
+//some stuff
 }
 
 
