@@ -33,13 +33,18 @@ function ListAllCtrl($scope,$location,$routeParams, Projectx) {
     $scope.resources = resources;
 }
  
-function ListCtrl($scope,$location,$routeParams, Projectx) {
+function ListCtrl($scope,$location,$routeParams, Projectx, $timeout) {
     $scope.info = Projectx.get({
         id:$routeParams.id,
         resreq:'resreq'
     });
-    var math = document.getElementById("mcm");
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+    $timeout( function() {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    },500);
+//    var math = document.getElementById("mcm");
+//    MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+    
 }
  
  
